@@ -1,5 +1,6 @@
 import { Big } from '../node_modules/big.js/big.mjs';
 import { LocalDate } from '../node_modules/@js-joda/core/dist/js-joda.esm.js';
+import { Employee, employeeList } from './employee.js';
 
 const txtId = $("#txt-id");
 const txtName = $("#txt-name");
@@ -54,6 +55,24 @@ $("#frm-employee").on('submit', (eventData) => {
     if (!validateData()) {
         return;
     }
+
+    /* Let's create a new employee */
+    const newEmployee = new Employee(txtName.val().trim(),
+        txtAddress.val().trim(), txtContact.val().trim(),
+        txtDOB.val().trim(), txtSalary.val().trim());
+    /* Let's add the new employee to the employee list */
+    employeeList.push(newEmployee);
+
+    /* Let's retrive the last tab index */
+    let lastTabIndex = $("#tbl-employees tbody tr:last-child").attr("tabindex") ?? 7;
+    $("#tbl-employees tbody").append(newEmployee.generateHtml());
+    $("#tbl-employees tbody tr:last-child").attr("tabindex", (+lastTabIndex + 1));
+
+    /* Let's clear everything */
+    $("#btn-clear").trigger("click");
+
+    /* Let's hide the table footer */
+    $("#tbl-employees tfoot").hide();
 });
 
 function validateData() {
@@ -121,3 +140,12 @@ function invalidate(txt, message) {
     txt.trigger('select');
     return false;
 }
+
+/* Let's setup some delegated event handlers */
+$("#tbl-employees tbody").on('click', 'tr > td:last-child', (eventData) => {
+    const row = $(eventData.target).parents("tr");
+    const empId = row.children("td:first-child").text();
+    employeeList.find(emp => emp.getEmployeeId() === empId).delete();
+    row.remove();
+    if (!employeeList.length) $("#tbl-employees tfoot").show();
+});
