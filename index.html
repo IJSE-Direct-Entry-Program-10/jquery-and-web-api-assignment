@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jQuery and Web API Assignment</title>
+    <link rel="stylesheet" href="node_modules/normalize.css/normalize.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
+    <link rel="stylesheet" href="css/styles.css">
+    <script defer src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script defer type="module" src="node_modules/@js-joda/core/dist/js-joda.min.js"></script>
+    <script defer type="module" src="node_modules/big.js/big.js"></script>
+    <script defer type="module" src="js/main.js"></script>
+</head>
+
+<body>
+    <header class="container">
+        <h1>jQuery and Web API Assignment</h1>
+    </header>
+    <main class="container">
+        <section class="col-lg-3 col-12">
+            <form id="frm-employee">
+                <div class="form-group">
+                    <label for="txt-id">Employee ID</label>
+                    <input tabindex="0" id="txt-id" type="text" disabled placeholder="Generated ID">
+                    <div class="hint">Employee ID is required</div>
+                </div>
+                <div class="form-group required">
+                    <label for="txt-name">Employee Name</label>
+                    <input tabindex="1" id="txt-name" type="text" placeholder="Eg. Kasun Sampath">
+                    <div class="hint">Employee Name is required</div>
+                </div>
+                <div class="form-group required">
+                    <label for="txt-address">Employee Address</label>
+                    <input tabindex="2" id="txt-address" type="text" placeholder="Eg. Grace Peries Road, Panadura">
+                    <div class="hint">Employee Address is required</div>
+                </div>
+                <div class="form-group required">
+                    <label for="txt-contact">Employee Contact</label>
+                    <input tabindex="3" id="txt-contact" type="text" placeholder="Eg. 0777-1234567">
+                    <div class="hint">Employee Contact is required</div>
+                </div>
+                <div class="form-group required invalid">
+                    <label for="txt-dob">Employee DOB</label>
+                    <input tabindex="4" id="txt-dob" type="date" placeholder="Eg. 1985-03-05">
+                    <div class="hint">Employee DOB is required</div>
+                </div>
+                <div class="form-group required">
+                    <label for="txt-salary">Employee Gross Salary</label>
+                    <input tabindex="5" id="txt-salary" type="number" placeholder="Eg. 500,000.00">
+                    <div class="hint">Employee Gross Salary is required</div>
+                </div>
+                <div class="form-group d-flex justify-between">
+                    <div>ETF Deduction</div>
+                    <span>5%</span>
+                </div>
+                <div class="form-group d-flex justify-between">
+                    <div>Net Salary</div>
+                    <span>Rs 0.00</span>
+                </div>
+                <div class="form-group d-flex gap justify-center">
+                    <button tabindex="6" id="btn-save" type="submit">SAVE</button>
+                    <button tabindex="7" id="btn-clear" type="reset">CLEAR</button>
+                </div>
+            </form>
+        </section>
+        <section class="col-lg-9 col-12">
+            <table id="tbl-employees">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr tabindex="8">
+                        <td>E001</td>
+                        <td>Kasun Sampath</td>
+                        <td>Grace Peries Road, Panadura</td>
+                        <td>
+                            <span class="material-symbols-outlined">
+                            delete_forever
+                            </span>
+                        </td>
+                    </tr>
+                    <tr tabindex="9">
+                        <td>E001</td>
+                        <td>Kasun Sampath</td>
+                        <td>Grace Peries Road, Panadura</td>
+                        <td>
+                            <span class="material-symbols-outlined">
+                            delete_forever
+                            </span>
+                        </td>
+                    </tr>                    
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4">No employee records are found!</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+{
+  "name": "jquery-and-web-api-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@js-joda/core": "^5.5.3",
+    "animate.css": "^4.1.1",
+    "big.js": "^6.2.1",
+    "jquery": "^3.7.0",
+    "normalize.css": "^8.0.1"
+  }
+}

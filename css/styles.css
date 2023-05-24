@@ -1,0 +1,243 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Ubuntu", sans-serif;
+}
+
+body {
+  color: rgb(56, 61, 65);
+}
+
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+header > h1 {
+  text-align: center;
+  width: 100%;
+}
+
+.col-lg-3 {
+  width: calc(100% / 12 * 4);
+}
+
+.col-lg-9 {
+  width: calc(100% / 12 * 8);
+}
+
+.form-group {
+  margin-top: 5px;
+  padding: 5px;
+}
+
+.form-group > label,
+.form-group > input {
+  display: block;
+  width: 100%;
+}
+
+.form-group > input {
+  border: 1px solid lightgray;
+  outline: none;
+  margin-top: 5px;
+  padding: 6px;
+  border-radius: 5px;
+}
+
+.form-group > input:focus,
+.form-group > input:hover:not(input[disabled]) {
+  border-color: dodgerblue;
+}
+
+.form-group > input:focus {
+  box-shadow: 0 0 2px 1px #03a9f4c9;
+}
+
+.form-group > .hint {
+  font-size: small;
+  padding-top: 5px;
+  display: none;
+}
+
+.form-group.required > label::after {
+  content: " *";
+  color: red;
+}
+
+.form-group.invalid > label {
+  color: red;
+}
+
+.form-group.invalid > input {
+  border-color: red !important;
+  box-shadow: 0 0 2px 1px red;
+  color: red;
+}
+
+.form-group.invalid > .hint {
+  display: block;
+  color: red;
+}
+
+.form-group.d-flex > span {
+    font-weight: bold;
+}
+
+button {
+    border: none;
+    padding: 10px;
+    background-color: rgb(187, 187, 187);
+    border-radius: 5px;
+    min-width: 75px;
+    cursor: pointer;
+}
+
+button[type="submit"]{
+    background-color: dodgerblue;
+    color: white;
+}
+
+button[type="submit"]:hover {
+    background-color: rgba(30, 143, 255, 0.9);
+}
+
+button[type="reset"]{
+    background-color: orange;
+    color: black;
+}
+
+button[type="reset"]:hover {
+    background-color: rgba(255, 166, 0, 0.9);
+;
+}
+
+.gap {
+    gap: 10px;
+}
+
+@media all and (max-width: 992px) {
+  .container {
+    max-width: 98%;
+  }
+
+  .col-12 {
+    width: 100%;
+  }
+
+  .form-group {
+    text-align: center;
+  }
+
+  .form-group > input {
+    text-align: center;
+  }
+
+  .form-group.d-flex.justify-between {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  main > section:last-child {
+    padding: 10px 0 !important;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify-between {
+    justify-content: space-between;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+form > div:last-child {
+    margin-top: 10px;
+}
+
+main > section:first-child {
+    border: 1px dotted lightgray;
+    border-radius: 10px;
+    padding: 5px;
+}
+
+main > section:last-child {
+    padding: 0 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table td,
+table th {
+    border: 1px solid lightgray;
+    padding: 5px;
+    text-align: left;
+}
+
+table thead {
+    background-color: rgb(236, 236, 236);
+}
+
+table th {
+    padding: 10px;
+}
+
+table th:first-child,
+table tbody td:first-child{
+    width: 100px;
+    text-align: center;
+}
+
+table th:last-child,
+table tbody td:last-child{
+    width: 50px;
+    text-align: center;
+}
+
+table tbody td:last-child span {
+    font-size: 1.7rem;
+}
+
+table tbody td:last-child:hover {
+    color: red;
+}
+
+table tbody tr:hover {
+    cursor: pointer;
+    background-color: rgba(230, 230, 230, 0.3);
+}
+
+table tbody tr:focus {
+    outline: 2px solid dodgerblue;
+    border-radius: 5px;
+    background-color: rgb(248, 253, 255);
+}
+
+table tfoot td {
+    text-align: center;
+    padding: 10px;
+}
