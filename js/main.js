@@ -52,9 +52,9 @@ $("#frm-employee").on('submit', (eventData) => {
     /* Let's prevent by default action of the form */
     eventData.preventDefault();
 
-    if (!validateData()) {
-        return;
-    }
+    // if (!validateData()) {
+    //     return;
+    // }
 
     /* Let's create a new employee */
     const newEmployee = new Employee(txtName.val().trim(),
@@ -144,8 +144,19 @@ function invalidate(txt, message) {
 /* Let's setup some delegated event handlers */
 $("#tbl-employees tbody").on('click', 'tr > td:last-child', (eventData) => {
     const row = $(eventData.target).parents("tr");
+    deleteRow(row);
+});
+
+$("#tbl-employees tbody").on('keyup', (eventData) => {
+    if (eventData.key === 'Delete' && document.activeElement){
+        const row = $(document.activeElement);
+        deleteRow(row);
+    }
+});
+
+function deleteRow(row){
     const empId = row.children("td:first-child").text();
     employeeList.find(emp => emp.getEmployeeId() === empId).delete();
     row.remove();
     if (!employeeList.length) $("#tbl-employees tfoot").show();
-});
+}
