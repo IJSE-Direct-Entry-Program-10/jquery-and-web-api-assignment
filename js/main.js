@@ -151,6 +151,10 @@ $("#tbl-employees tbody").on('keyup', (eventData) => {
     if (eventData.key === 'Delete' && document.activeElement){
         const row = $(document.activeElement);
         deleteRow(row);
+    } else if (eventData.key === 'ArrowUp' && document.activeElement){
+        $(document.activeElement).prev("tr").trigger("focus");
+    } else if (eventData.key === 'ArrowDown' && document.activeElement){
+        $(document.activeElement).next("tr").trigger("focus");
     }
 });
 
