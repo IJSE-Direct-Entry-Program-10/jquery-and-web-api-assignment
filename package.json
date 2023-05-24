@@ -1,14 +1,9 @@
 {
   "name": "jquery-and-web-api-assignment",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "A simple assignment to practice to front-end technologies",
+  "author": "Direct Entry Program <dep@ijse.lk> (https://ijse.lk)",
+  "license": "Copyright © 2023 DEP-10. All Rights Reserved.",
   "dependencies": {
     "@js-joda/core": "^5.5.3",
     "animate.css": "^4.1.1",
